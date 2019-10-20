@@ -1,0 +1,7 @@
+@import url('../../css/fonts/fuente.css');
+.fondo{
+    position: absolute;        
+    width: 98.5vw;
+    height: 98.5%;  
+    z-index: -5;
+}

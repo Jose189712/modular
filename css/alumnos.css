@@ -1,0 +1,89 @@
+@import url('fonts/fuente.css');
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.fondo{
+    position: absolute;    
+    right: 10%;
+    left: 10%;
+    width: 80%;
+    height: 100%;  
+    z-index: -5; 
+}
+#dialogo{
+    margin-top:8vh;
+    font-family: var(--fuente-infantil);
+    font-size: 1.3em;
+    text-align:center;    
+}
+#registro > p,#inicio > p,#ocultarRegistro > p,#ocultarInicio > p{
+    font-family: var(--fuente-infantil);  
+    font-size: 1.5em;  
+}
+#ocultarRegistro{
+    display:none;
+}
+#ocultarInicio{
+    display:none;
+}
+#registro > p,#inicio > p,#ocultarRegistro > p,#ocultarInicio > p:hover{
+    cursor:pointer;   
+}
+#registro:hover{
+    text-shadow: 1px 1px 1px yellow;
+}
+#inicio:hover{
+    text-shadow: 1px 1px 1px yellow;
+}
+#ocultarRegistro:hover{
+    text-shadow: 1px 1px 1px yellow;
+}
+#ocultarInicio:hover{
+    text-shadow: 1px 1px 1px yellow;
+}
+.formularios{
+    position: fixed;  
+    padding:2vh;  
+    background: rgb(212, 193, 158);
+    border: 5px solid black;
+    top:25%;    
+    left:37%;    
+    height:auto;
+    width: 30vw;   
+    border-radius: 10px; 
+    font-family: var(--fuente-infantil);  
+    display: none;  
+}
+#usuario{
+    position: relative;
+}
+.boton-submit{
+    position: relative;  
+    padding: 0 2vh 0 2vh;              
+    width:100%;
+    height:auto;    
+    background-color:#F8F32B;
+    font-size: 20px;    
+    font-family: var(--fuente-infantil);
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0px 6px 0 #A3A21B;
+    text-align: center;
+}
+.boton-submit:hover{    
+    cursor: pointer;
+}
+.boton-submit:active{
+    top: 3px;        
+    box-shadow: 0px 2px 0 #A3A21B;
+}
+.subregistro{
+    text-align:center;  
+    margin: 1vh 0 1vh 0;  
+    display: none;    
+}
+.subregistro:hover{
+    cursor:pointer;
+    color:blue;    
+}

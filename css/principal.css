@@ -1,0 +1,75 @@
+@import url('fonts/fuente.css');
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+.fondo{
+    position: absolute;
+    right: 5%;
+    left: 5%;
+    width: 90%;
+    height: 100%;  
+    z-index: -5; 
+}
+.contenedor{
+    position: fixed;
+    left:38%;
+    top:40%;
+    width: 45%;
+    height:auto;
+    background-color:transparent;    
+}
+.grupo-botones{
+    display: inline-flex;
+}
+.grupo-botones > a{  
+    position: relative;  
+    padding:2vh;
+    background-color:#3BFF38;
+    font-size: 20px;    
+    font-family: var(--fuente-infantil);
+    border-radius: 0px 0px 25px 25px;
+    box-shadow: 0px 6px 0 #0EB30B;
+    text-decoration: none;
+}
+.grupo-botones > a:hover{
+    cursor:pointer;
+}
+.grupo-botones > a:active{
+    top: 3px;        
+    box-shadow: 0px 2px 0 #008024;
+}
+#instrucciones{
+    margin-top: 5vh; 
+    margin-bottom:4vh;   
+}
+#descripcion{
+    font-family: 'Permanent Marker' , cursive;
+    text-align: left;
+}
+.borrado{
+    position: relative;  
+    padding: 0 2vh 0 2vh;       
+    float:right;   
+    width:auto;
+    height:auto;    
+    background-color:#FF2D00;
+    font-size: 20px;    
+    font-family: var(--fuente-infantil);
+    border-radius: 25px 25px 25px 25px;
+    box-shadow: 0px 6px 0 #B32100;
+    text-decoration: none;
+}
+.borrado > p{
+    text-align:center;
+    margin:0 auto;
+}
+.borrado:hover{
+    cursor:pointer;    
+}
+.borrado:active{
+    top: 3px;        
+    box-shadow: 0px 2px 0 #B32100;
+}
+
