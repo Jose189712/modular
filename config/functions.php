@@ -1,11 +1,16 @@
 <?php
+require "configDB.php";
 
-    function connect($server, $db, $user, $pass){
-        try{
-            $con =new PDO("mysql:host=$server;dbname=$db",$user,$pass);
-            return $con;
-        }catch(PDOException $e){
-            return false;
+    class Conexion{
+        protected $db;
+
+        public function __construct(){
+            try{
+                $this->$db = new PDO("mysql:host=".servidor.";dbname=".seducativo,usuario,password);
+            }catch(PDOException $e){
+                echo "fallo";
+                return;
+            }                   
         }
-    }
+    }//fin de la clase conexión    
 ?>

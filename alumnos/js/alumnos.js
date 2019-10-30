@@ -105,7 +105,7 @@
         function envioDatos(identificador){
             $(identificador).click(function(){
                 // Mandar datos AJAX
-
+                
             });
         }//fin del método envioDatos   
     });//Fin de la función para leer cuando ya se ha terminado de cargar el archivo       
