@@ -18,16 +18,17 @@
                     direction: 'alternate'            
                 })
                 .add({targets: '#dialogo', color: '#ce0018'},0);
-                botonesDeshabilitados("#inicio","none");              
-                $("#formulario-alumnos").slideUp('1000');                
+               // botonesDeshabilitados("#inicio","none");              
+                $("#formularioL-alumnos").slideUp('1000');   
+                $("#formularioR-alumnos").slideDown('1000');                               
                 $("#form-titulo").text("Registrate en esta sección");
-                $(".subregistro").css('display','none'); 
-                $("#click > p").text("Registrar");
-                $("#click").attr('registro','sendRegistro');
-                envioDatos("#sendRegistro");
-                $("#nombreRegistro").show();
-                $("#cambioAccion").attr('value','registro');
-                $("#formulario-alumnos").slideDown('1000');
+                //$(".subregistro").css('display','none'); 
+                //$("#click > p").text("Registrar");
+                //$("#click").attr('registro','sendRegistro');
+                //envioDatos("#sendRegistro");
+                //$("#nombreRegistro").show();
+                //$("#cambioAccion").attr('value','registro');
+                //$("#formulario-alumnos").slideDown('1000');
                 $("#registro").slideUp('1000');
                 $("#ocultarRegistro").slideDown('1000');     
                 setTimeout(function(){
@@ -38,7 +39,7 @@
 
         // EVENTOS DE CLICK PARA EL BOTON OCULTAR PARA VOLVER COMO AL INICIO
         $("#ocultarRegistro").click(function(){
-            $("#formulario-alumnos").slideUp('1000');
+            $("#formularioR-alumnos").slideUp('1000');
             $(this).slideUp('1000');
             $("#registro").slideDown('1000');
             enviarMensaje("#dialogo > p","¡Hola! Vamos elige una opción para que puedas continuar");
@@ -56,18 +57,19 @@
                     direction: 'alternate'            
                 })
                 .add({targets: '#dialogo', color: '#ce0018'},0);
-                botonesDeshabilitados("#registro","none");            
-                $("#formulario-alumnos").slideUp('1000');
-                $("#form-titulo").text("Ingresa tus datos de usuario");
-                $(".subregistro").css('display','block');
-                $("#click > p").text("Iniciar");
-                $("#click").attr('inicio','inicio');
-                $("#click").click(function(){
+                //botonesDeshabilitados("#registro","none");            
+                $("#formularioR-alumnos").slideUp('1000');
+                $("#formularioL-alumnos").slideDown('1000');                
+                $("#formL-titulo").text("Ingresa tus datos de usuario");
+               // $(".subregistro").css('display','block');
+                //$("#click > p").text("Iniciar");
+                //$("#click").attr('inicio','inicio');
+                $("#clickL").click(function(){
                     location.href="./test_vak/";
                 });
-                $("#nombreRegistro").hide();
-                $("#cambioAccion").attr('value','sesion');
-                $("#formulario-alumnos").slideDown('1000');
+                //$("#nombreRegistro").hide();
+                //$("#cambioAccion").attr('value','sesion');
+               // $("#formularioL-alumnos").slideDown('1000');
                 $(this).slideUp('1000');        
                 $("#ocultarInicio").slideDown('1000');
                 setTimeout(function(){
@@ -78,7 +80,7 @@
 
         // EVENTOS DE CLICK PARA EL BOTON OCULTAR PARA VOLVER COMO AL INICIO
         $("#ocultarInicio").click(function(){
-            $("#formulario-alumnos").slideUp('1000');
+            $("#formularioL-alumnos").slideUp('1000');
             $(this).slideUp('1000');
             $("#inicio").slideDown('1000');
             enviarMensaje("#dialogo > p","¡Hola! Vamos elige una opción para que puedas continuar");
@@ -87,7 +89,12 @@
 
 
 // MÓDULO PARA REGISTRAR LOS ALUMNOS EN EL SISTEMA
-
+        $("#click").click(function(){
+            $.ajax({
+                url: './registro.php',
+                
+            });
+        });
 // FIN DEL MÓDULO PARA REGISTRAR LOS ALUMNOS EN EL SISTEMA
 
         //FUNCIONES
@@ -101,12 +108,6 @@
         }//fin de la función enviarMensaje
         function botonesDeshabilitados(accion,estado){            
             $(accion).css('display',estado);
-        }//fin de la funcion botones deshabilitados  
-        function envioDatos(identificador){
-            $(identificador).click(function(){
-                // Mandar datos AJAX
-                
-            });
-        }//fin del método envioDatos   
+        }//fin de la funcion botones deshabilitados             
     });//Fin de la función para leer cuando ya se ha terminado de cargar el archivo       
 })();//Fin de la función autoinvocada

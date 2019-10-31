@@ -50,11 +50,12 @@
     border: 5px solid black;
     top:25%;    
     left:37%;    
-    height:auto;
+    height:50vh;
     width: 30vw;   
     border-radius: 10px; 
     font-family: var(--fuente-infantil);  
     display: none;  
+    overflow: auto;    
 }
 #usuario{
     position: relative;
@@ -80,8 +81,7 @@
 }
 .subregistro{
     text-align:center;  
-    margin: 1vh 0 1vh 0;  
-    display: none;    
+    margin: 1vh 0 1vh 0;       
 }
 .subregistro:hover{
     cursor:pointer;
