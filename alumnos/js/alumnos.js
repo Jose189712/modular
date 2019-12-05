@@ -92,7 +92,12 @@
         $("#click").click(function(){
             $.ajax({
                 url: './registro.php',
-                
+                type: 'POST',
+                data: $("#registerForm").serialize(),
+                success: function(response) {
+                    if(response)
+                        alert("Registro exitoso"+response);
+                }
             });
         });
 // FIN DEL MÓDULO PARA REGISTRAR LOS ALUMNOS EN EL SISTEMA

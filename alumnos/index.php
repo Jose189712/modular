@@ -45,46 +45,46 @@
 
 
     <div class="row formularios" id="formularioR-alumnos">
-        <form class="col s12" method="post">
+        <form class="col s12" method="post" id="registerForm">
             <div class="row">
                 <div class="col s12">
                     <h5 id="form-titulo" style="text-align:center"></h5>
                 </div>
                 <div id="" class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_nombre" type="text" class="validate" name="nombreA">
+                    <input id="icon_nombre" type="text" class="validate" name="nombreA" required>
                     <label for="icon_nombre">Escribe tu nombre</label>
                 </div>   
                 <div class="input-field col s12" >
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_p" type="text" class="validate" name="apellidoP">
+                    <input id="icon_p" type="text" class="validate" name="apellidoP" required>
                     <label for="icon_p">Escribe tu primer apellido</label>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_m" type="text" class="validate" name="apellidoM">
+                    <input id="icon_m" type="text" class="validate" name="apellidoM" required>
                     <label for="icon_m">Escribe tu segundo apellido</label>
                 </div>             
                 <div class="input-field col s12">
                     <i class="material-icons prefix">account_circle</i>
-                    <input id="icon_prefix" type="text" class="validate" name="name_user">
+                    <input id="icon_prefix" type="text" class="validate" name="name_user" required>
                     <label for="icon_prefix">Escribe tu nombre de usuario</label>
                 </div>
                 <div class="input-field col s12">
                     <p>
                         <label>
-                            <input class="with-gap" name="group3" type="radio" value="nino" checked />
+                            <input class="with-gap" name="sexo" type="radio" value="nino" checked required/>
                             <span>Niño</span>
                         </label>
                         <label>
-                            <input class="with-gap" name="group3" type="radio" value="nina" checked />
+                            <input class="with-gap" name="sexo" type="radio" value="nina" checked required/>
                             <span>Niña</span>
                         </label>
                     </p>
                 </div>
                 <div class="input-field col s12">
                     <i class="material-icons prefix">lock</i>
-                    <input id="icon_lock" type="password" class="validate" name="password">
+                    <input id="icon_lock" type="password" class="validate" name="password" required>
                     <label for="icon_lock">Escribe tu palabra secreta</label>
                 </div>                                          
                 <div class="input-field col s12">
