@@ -120,7 +120,7 @@
     </div>
     <script src="../materialize/js/jquery-3.3.1.min.js"></script>
     <script src="../materialize/js/materialize.min.js"></script>  
-    <script src="../animacion/anime-master/lib/anime.min.js"></script>
+    <script src="../animacion/anime.min.js"></script>
     <script src="js/alumnos.js"></script>  
 </body>
 </html>
