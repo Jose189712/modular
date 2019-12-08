@@ -5,7 +5,7 @@
         actualizar_botones("#padres");
         actualizar_botones("#instituciones");
         $(this).css('background','#00CC3A');
-        $("#descripcion").html("¡ALUMNOS! VAMOS COMENCEMOS LA AVENTURA CON LAS MATEMÁTICAS");
+        $("#descripcion").html("¡Alumnos! Vamos comencemos la aventura con las Matemáticas");
         $(".borrado").remove();
         $(".contenedor").append("<div id=\"alumnosA\" class=\"borrado\"><p>Vamos</p></div>");
         asignar_redireccion("./alumnos/index.php","#alumnosA");
