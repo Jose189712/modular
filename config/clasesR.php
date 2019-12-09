@@ -1,5 +1,5 @@
 <?php    
-    require ('../config/functions.php');      
+    require ('functions.php');      
 
     class AlumnoR extends Conexion{
         public function __construct(){

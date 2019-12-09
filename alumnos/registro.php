@@ -1,5 +1,6 @@
 <?php 
-    require "alumnosR.php";
+    require "../config/clasesR.php";
+
     $alumno = $_POST['name_user'];            
     $nombre = $_POST['nombreA'];
     $apellidoP = $_POST['apellidoP'];

@@ -47,7 +47,7 @@
         // FIN DEL EVENTO PARA EL BOTON OCULTAR
 
 //  ACCIONES PARA EL INICIO DE SESIÓN        
-        $("#inicio").click(function(){     
+        $("#inicio").click(function(){                 
                 $("#ocultarRegistro").slideUp('1000');
                 $("#registro").slideDown('1000');                                           
                 enviarMensaje("#dialogo > p","¿Quieres ingresar? Ingresa tu nombre de usuario y la palabra secreta que elegiste");    
@@ -99,6 +99,7 @@
 
 // VARIABLES PARA MOSTRAR DATOS EN ORDEN DE UNO POR UNO
 var botonSiguiente = document.querySelector("#siguiente");
+var botonAnterior = document.querySelector("#anterior");
 var arregloComponents = document.querySelectorAll(".arreglo");
 var contador = 0;
     
@@ -107,13 +108,26 @@ botonSiguiente.addEventListener('click',function(e){
         arregloComponents[contador].setAttribute('style','display:none');
         contador++;
         arregloComponents[contador].setAttribute('style','display:block');
+        arregloComponents[contador].childNode[1];
         if(contador==arregloComponents.length-1) this.setAttribute('style','display:none')
     }else{
         this.setAttribute('style','display:none');
     }
 })
 
+botonAnterior.addEventListener('click',function(e){
+    if(contador != 0){
+        arregloComponents[contador].setAttribute('style','display:none');
+        contador--;
+        arregloComponents[contador].setAttribute('style','display:block');
+        if(contador<=arregloComponents.length-1) botonSiguiente.setAttribute('style','display:block')
+    }
+})
+
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS
+        
+
+
         //FUNCIONES
         /**Función para animar cuadro de dialogo */
         function animarDialogo(){

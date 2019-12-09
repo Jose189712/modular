@@ -94,6 +94,7 @@
                 </div>                                           
             </div>
             <a id="siguiente" class="btn-floating right btn-large waves-effect waves-light yellow boton-submit"><i class="material-icons black-text">arrow_forward</i></a>
+            <a id="anterior" class="btn-floating left btn-large waves-effect waves-light yellow boton-submit"><i class="material-icons black-text">arrow_back</i></a>
         </form>    
     </div>
     <div class="row formularios" id="formularioL-alumnos">
