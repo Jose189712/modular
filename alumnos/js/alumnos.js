@@ -22,6 +22,7 @@
                 $("#formularioL-alumnos").slideUp('1000');   
                 $("#formularioR-alumnos").slideDown('1000');                               
                 $("#form-titulo").text("Registrate en esta sección");
+                document.querySelector("#icon_nombre").focus();
                 //$(".subregistro").css('display','none'); 
                 //$("#click > p").text("Registrar");
                 //$("#click").attr('registro','sendRegistro');
@@ -58,10 +59,7 @@
                 $("#formL-titulo").text("Ingresa tus datos de usuario");
                // $(".subregistro").css('display','block');
                 //$("#click > p").text("Iniciar");
-                //$("#click").attr('inicio','inicio');
-                $("#clickL").click(function(){
-                    location.href="./test_vak/";
-                });
+                //$("#click").attr('inicio','inicio');                
                 //$("#nombreRegistro").hide();
                 //$("#cambioAccion").attr('value','sesion');
                // $("#formularioL-alumnos").slideDown('1000');
@@ -107,8 +105,8 @@ botonSiguiente.addEventListener('click',function(e){
     if(contador < arregloComponents.length-1){
         arregloComponents[contador].setAttribute('style','display:none');
         contador++;
-        arregloComponents[contador].setAttribute('style','display:block');
-        arregloComponents[contador].childNode[1];
+        arregloComponents[contador].setAttribute('style','display:block');        
+        if(arregloComponents[contador].children.length > 1) arregloComponents[contador].children[1].focus();              
         if(contador==arregloComponents.length-1) this.setAttribute('style','display:none')
     }else{
         this.setAttribute('style','display:none');
@@ -120,10 +118,25 @@ botonAnterior.addEventListener('click',function(e){
         arregloComponents[contador].setAttribute('style','display:none');
         contador--;
         arregloComponents[contador].setAttribute('style','display:block');
+        if(arregloComponents[contador].children.length > 1) arregloComponents[contador].children[1].focus();
         if(contador<=arregloComponents.length-1) botonSiguiente.setAttribute('style','display:block')
     }
 })
 
+var iniciarYa = document.querySelector("#clickL");
+
+
+iniciarYa.addEventListener('click', function(){    
+    $.ajax({
+        url: './login.php',
+        type: 'POST',
+        data: $("#loginForm").serialize(),
+        success: function(response) {
+            if(response == 'true')
+                location.href = './test_vak';
+        }
+    });
+})
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS
         
 

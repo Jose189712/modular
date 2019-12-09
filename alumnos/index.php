@@ -98,7 +98,7 @@
         </form>    
     </div>
     <div class="row formularios" id="formularioL-alumnos">
-        <form class="col s12" method="post">
+        <form class="col s12" id="loginForm">
             <div class="row">
                 <div class="col s12">
                     <h5 id="formL-titulo" style="text-align:center"></h5>

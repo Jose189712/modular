@@ -54,7 +54,7 @@
             pregunta();
         });
         $("#btn-finalizar > .boton-finalizar").click(function(){
-            location.href = "../diagnostico";
+            location.href = "../ejercicios/circuito.html";
         });
         
         //FUNCIONES AL DAR CLICK EN UNA IMAGEN
@@ -102,6 +102,6 @@
                     $("#btn-finalizar").slideDown('1000');                    
                 break;
             }//fin del switch
-        }//fin de la función pregunta
+        }//fin de la función pregunta        
     });
 }());

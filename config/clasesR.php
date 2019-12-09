@@ -9,8 +9,8 @@
         public function empty_Alumno($name_user){                                    
             if($this->$db != NULL){            
                 $statement = $this->$db->prepare("SELECT name_user FROM alumnos WHERE name_user='$name_user'");
-                $statement->execute();
-                $respuesta = $statement->fetchAll();                
+                $h = $statement->execute();
+                $respuesta = $h->fetchAll();                
                 if(empty($respuesta)){                    
                     return 'true';
                 }else{
