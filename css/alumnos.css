@@ -92,3 +92,9 @@
 #inicio,#registro{
     display:none;
 }
+.arreglo{
+    display:none;
+}
+#siguiente{
+    color: black;
+}

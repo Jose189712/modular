@@ -48,30 +48,32 @@
         <form class="col s12" method="post" id="registerForm">
             <div class="row">
                 <div class="col s12">
-                    <h5 id="form-titulo" style="text-align:center"></h5>
+                    <h5 id="form-titulo" style="text-align:center;margin-bottom:5vh"></h5>
                 </div>
-                <div id="" class="input-field col s12">
+                <div  class="input-field col s12 arreglo" style="display:block">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="icon_nombre" type="text" class="validate" name="nombreA" required>
                     <label for="icon_nombre">Escribe tu nombre</label>
                 </div>   
-                <div class="input-field col s12" >
+                <div class="input-field col s12 arreglo">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="icon_p" type="text" class="validate" name="apellidoP" required>
                     <label for="icon_p">Escribe tu primer apellido</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 arreglo">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="icon_m" type="text" class="validate" name="apellidoM" required>
                     <label for="icon_m">Escribe tu segundo apellido</label>
                 </div>             
-                <div class="input-field col s12">
+                <div class="input-field col s12 arreglo">
                     <i class="material-icons prefix">account_circle</i>
                     <input id="icon_prefix" type="text" class="validate" name="name_user" required>
                     <label for="icon_prefix">Escribe tu nombre de usuario</label>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 arreglo">
                     <p>
+                        <label>Elige tu genero de los de abajo</label>
+                        <br>
                         <label>
                             <input class="with-gap" name="sexo" type="radio" value="nino" checked required/>
                             <span>Niño</span>
@@ -82,15 +84,16 @@
                         </label>
                     </p>
                 </div>
-                <div class="input-field col s12">
+                <div class="input-field col s12 arreglo">
                     <i class="material-icons prefix">lock</i>
                     <input id="icon_lock" type="password" class="validate" name="password" required>
                     <label for="icon_lock">Escribe tu palabra secreta</label>
                 </div>                                          
-                <div class="input-field col s12">
+                <div class="input-field col s12 arreglo">
                     <div id="click" class="boton-submit"><p>Registrar</p></div>
-                </div>                           
+                </div>                                           
             </div>
+            <a id="siguiente" class="btn-floating right btn-large waves-effect waves-light yellow boton-submit"><i class="material-icons black-text">arrow_forward</i></a>
         </form>    
     </div>
     <div class="row formularios" id="formularioL-alumnos">
@@ -108,10 +111,7 @@
                     <i class="material-icons prefix">lock</i>
                     <input id="icon_lockL" type="password" class="validate" name="passwordL" required>
                     <label for="icon_lockL">Escribe tu palabra secreta</label>
-                </div>                           
-                <div class="col s12 subregistro">
-                    <p>Si no te has registrado da click aqui</p>
-                </div>
+                </div>                                           
                 <div class="input-field col s12">
                     <div id="clickL" class="boton-submit"><p>Iniciar</p></div>
                 </div>                           

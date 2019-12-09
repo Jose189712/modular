@@ -97,6 +97,23 @@
         });
 // FIN DEL MÓDULO PARA REGISTRAR LOS ALUMNOS EN EL SISTEMA
 
+// VARIABLES PARA MOSTRAR DATOS EN ORDEN DE UNO POR UNO
+var botonSiguiente = document.querySelector("#siguiente");
+var arregloComponents = document.querySelectorAll(".arreglo");
+var contador = 0;
+    
+botonSiguiente.addEventListener('click',function(e){
+    if(contador < arregloComponents.length-1){
+        arregloComponents[contador].setAttribute('style','display:none');
+        contador++;
+        arregloComponents[contador].setAttribute('style','display:block');
+        if(contador==arregloComponents.length-1) this.setAttribute('style','display:none')
+    }else{
+        this.setAttribute('style','display:none');
+    }
+})
+
+// FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS
         //FUNCIONES
         /**Función para animar cuadro de dialogo */
         function animarDialogo(){
