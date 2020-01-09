@@ -3,7 +3,7 @@
     
     $nickName = $_POST['name_userL'];
     $password = $_POST['passwordL'];
-    
+       
     $login = new SesionAlumnos();
     
     if($login->existeAlumno($nickName,$password)){

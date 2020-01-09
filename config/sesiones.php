@@ -7,14 +7,10 @@
         }//fin del constructor de la calse UsuarioR
 
         public function existeAlumno($name_user,$password){
-            if($this->$db != NULL){
-                //var_dump($name_user." ".$password);
+            if($this->$db != NULL){                
                 $statement = $this->$db->prepare("SELECT * FROM alumnos WHERE (name_user='$name_user' AND palabra_secreta='$password')");
-                $statement->execute();
-                //var_dump($statement->execute());
-                $resultado = $statement->fetchAll();
-                //var_dump($resultado);
-                //var_dump(empty($resultado));
+                $statement->execute();                
+                $resultado = $statement->fetchAll();                
                 if(empty($resultado)) return false;
                 else return $this->createSession($resultado);
             }else{
@@ -33,4 +29,11 @@
         }//fin del método para crear la session
     }//Clase de sesionAlumnos para iniciar la sesion de los alumnos
 
+    class SesionPadre extends Conexion{
+        public function __construct(){
+            parent::__construct();
+        }
+
+        
+    }
 ?>

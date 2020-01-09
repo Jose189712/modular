@@ -124,18 +124,38 @@ botonAnterior.addEventListener('click',function(e){
 })
 
 var iniciarYa = document.querySelector("#clickL");
+var prueba = document.querySelector("#loginForm");
 
 
-iniciarYa.addEventListener('click', function(){    
-    $.ajax({
-        url: './login.php',
-        type: 'POST',
-        data: $("#loginForm").serialize(),
-        success: function(response) {
-            if(response == 'true')
-                location.href = './test_vak';
-        }
-    });
+iniciarYa.addEventListener('click', function(){      
+    var prueba1 = new FormData(prueba);
+    var hola = {
+        name_userL : prueba1.get('name_userL'),
+        passwordL : prueba1.get('passwordL')
+    }    
+    //console.log(JSON.stringify(hola));
+    //console.log(prueba1.get('name_userL'));  
+    fetch('./login.php',{
+        method: 'POST',
+        body: prueba1
+    })
+    .then(response => {
+        return response.text();
+    })    
+    .then(respuesta => {
+        console.log(respuesta);
+    })
+
+    // $.ajax({
+    //     url: './login.php',
+    //     type: 'POST',
+    //     data: hola,
+    //     success: function(response) {
+    //         console.log(response);
+    //         // if(response == 'true')
+    //         //     location.href = './test_vak';
+    //     }
+    // });
 })
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS
         
