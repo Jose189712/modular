@@ -17,19 +17,11 @@
                 $("#ocultarInicio").slideUp('1000');
                 $("#inicio").slideDown('1000');                                                    
                 enviarMensaje("#dialogo > p", "Hiciste click para registrarte. Ingresa un nombre de usuario y una palabra secreta");  
-                animarDialogo();
-               // botonesDeshabilitados("#inicio","none");              
+                animarDialogo();                           
                 $("#formularioL-alumnos").slideUp('1000');   
                 $("#formularioR-alumnos").slideDown('1000');                               
                 $("#form-titulo").text("Registrate en esta sección");
-                document.querySelector("#icon_nombre").focus();
-                //$(".subregistro").css('display','none'); 
-                //$("#click > p").text("Registrar");
-                //$("#click").attr('registro','sendRegistro');
-                //envioDatos("#sendRegistro");
-                //$("#nombreRegistro").show();
-                //$("#cambioAccion").attr('value','registro');
-                //$("#formulario-alumnos").slideDown('1000');
+                document.querySelector("#icon_nombre").focus();                
                 $("#registro").slideUp('1000');
                 $("#ocultarRegistro").slideDown('1000');     
                 setTimeout(function(){
@@ -52,17 +44,10 @@
                 $("#ocultarRegistro").slideUp('1000');
                 $("#registro").slideDown('1000');                                           
                 enviarMensaje("#dialogo > p","¿Quieres ingresar? Ingresa tu nombre de usuario y la palabra secreta que elegiste");    
-                animarDialogo();
-                //botonesDeshabilitados("#registro","none");            
+                animarDialogo();                          
                 $("#formularioR-alumnos").slideUp('1000');
                 $("#formularioL-alumnos").slideDown('1000');                
-                $("#formL-titulo").text("Ingresa tus datos de usuario");
-               // $(".subregistro").css('display','block');
-                //$("#click > p").text("Iniciar");
-                //$("#click").attr('inicio','inicio');                
-                //$("#nombreRegistro").hide();
-                //$("#cambioAccion").attr('value','sesion');
-               // $("#formularioL-alumnos").slideDown('1000');
+                $("#formL-titulo").text("Ingresa tus datos de usuario");               
                 $(this).slideUp('1000');        
                 $("#ocultarInicio").slideDown('1000');
                 setTimeout(function(){
@@ -128,34 +113,20 @@ var prueba = document.querySelector("#loginForm");
 
 
 iniciarYa.addEventListener('click', function(){      
-    var prueba1 = new FormData(prueba);
-    var hola = {
-        name_userL : prueba1.get('name_userL'),
-        passwordL : prueba1.get('passwordL')
-    }    
-    //console.log(JSON.stringify(hola));
-    //console.log(prueba1.get('name_userL'));  
+    var formulario = new FormData(prueba);
     fetch('./login.php',{
         method: 'POST',
-        body: prueba1
+        body: formulario
     })
     .then(response => {
         return response.text();
     })    
     .then(respuesta => {
         console.log(respuesta);
+        if(respuesta == 'true')
+            location.href = './test_vak';            
+         
     })
-
-    // $.ajax({
-    //     url: './login.php',
-    //     type: 'POST',
-    //     data: hola,
-    //     success: function(response) {
-    //         console.log(response);
-    //         // if(response == 'true')
-    //         //     location.href = './test_vak';
-    //     }
-    // });
 })
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS
         

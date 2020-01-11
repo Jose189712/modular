@@ -1,3 +1,10 @@
+<?php
+  session_start();
+  
+  if(empty($_SESSION['idusuario'])){
+    header('Location: index.html');
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../materialize/css/materialize.min.css">
-  <title>Document</title>
+  <title>Padres</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
@@ -15,15 +22,13 @@
 
     <!-- Dropdown Structure -->
     <ul id="dropdown1" class="dropdown-content">
-      <li><a href="#!">Editar Perfil</a></li>
-      <li><a href="#!">none</a></li>
+      <li><a href="#!">Editar Perfil</a></li>      
       <li class="divider"></li>
-      <li><a href="#!">Cerrar Sesion</a></li>
+      <li><a href="close_sesion.php">Cerrar Sesion</a></li>
     </ul>
 
     <ul id="dropdown2" class="dropdown-content">
-      <li><a href="#!">Editar Perfil</a></li>
-      <li><a href="#!">none</a></li>
+      <li><a href="#!">Editar Perfil</a></li>      
       <li class="divider"></li>
       <li><a href="#!">Cerrar Sesion</a></li>
     </ul>
@@ -33,14 +38,14 @@
         <a href="http://localhost:8080/Proyecto" class="brand-logo">SEA</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul class="right hide-on-med-and-down">
-          <li><a href="sass.html">Inicio</a></li>
+          <li><a href="#">Inicio</a></li>
           <li><a href="badges.html">Informacion</a></li>
           <li><a href="collapsible.html">Sesiones</a></li>
           <!-- Dropdown Trigger -->
           <li style="font-weight: bold;"><a class="dropdown-trigger valign-wrapper" href="#!" data-target="dropdown1">
               <img src="img/papa.jpg" alt="" class="circle responsive-img"
                 style="width:50px; height:50px; margin-top:5px; margin-right:10px;">
-              Elmer Figueroa Arce<i class="material-icons right">arrow_drop_down</i> </a></li>
+              <?php echo $_SESSION['nombre']." ".$_SESSION['apellidoP']." ".$_SESSION['apellidoM']?><i class="material-icons right">arrow_drop_down</i> </a></li>
         </ul>
       </div>
     </nav>
@@ -50,7 +55,7 @@
       <li><a style="height:auto; font-weight: bold; font-size:5vh;"
           class="dropdown-trigger center cyan  waves-effect waves-light" href="#!" data-target="dropdown2"> <img
             src="img/papa.jpg" alt="" class="circle responsive-img" style="width:250px; height:250px; margin-top:5px;">
-          Elmer Figueroa Arce </a></li>
+            <?php echo $_SESSION['nombre']." ".$_SESSION['apellidoP']." ".$_SESSION['apellidoM']?> </a></li>
       <li><a href="sass.html">Inicio</a></li>
       <li><a href="badges.html">Informacion</a></li>
       <li><a href="collapsible.html">Sesiones</a></li>
