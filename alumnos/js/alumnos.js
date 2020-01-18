@@ -74,7 +74,8 @@
                 data: $("#registerForm").serialize(),
                 success: function(response) {
                     if(response)
-                        alert("Registro exitoso"+response);
+                        alert("Registro exitoso"+response);                        
+                        location.href = './test_vak';
                 }
             });
         });
@@ -123,9 +124,8 @@ iniciarYa.addEventListener('click', function(){
     })    
     .then(respuesta => {
         console.log(respuesta);
-        if(respuesta == 'true')
-            location.href = './test_vak';            
-         
+        if(respuesta == 'true')                        
+        location.href = './tablero.php';
     })
 })
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS

@@ -1,4 +1,5 @@
 <?php
+  require '../config/functions.php';
   session_start();
   
   if(empty($_SESSION['idusuario'])){
@@ -30,7 +31,7 @@
     <ul id="dropdown2" class="dropdown-content">
       <li><a href="#!">Editar Perfil</a></li>      
       <li class="divider"></li>
-      <li><a href="#!">Cerrar Sesion</a></li>
+      <li><a href="close_sesion.php">Cerrar Sesion</a></li>
     </ul>
 
     <nav class="sidenav-trigger cyan">
@@ -64,12 +65,22 @@
   </header>
 
   <main>
+  <?php  
+    $base = new Conexion();
 
+    $idPadre = $_SESSION['idusuario'];
+
+    $statement = $base->$db->prepare("SELECT alumnos.nombreAlumno,alumnos.apellido_p_Alumno,alumnos.apellido_m_Alumno FROM alumnos, alumnos_has_padre,
+    padre WHERE padre.USUARIOS_E_idUSUARIOS_E=$idPadre AND padre.idPADRE=alumnos_has_padre.PADRE_idPADRE AND alumnos_has_padre.ALUMNOS_idALUMNOS=alumnos.idALUMNOS");
+    $statement->execute();    
+    
+    $respuesta1 = $statement->fetch();          
+  ?>
     <div class="row" style="margin-top: 5vh;">
       <div class="container cyan accent-2">
         <div class="center white" style="height:auto;">
           <a style="margin: 2vh; font-weight: bold;" class="waves-effect waves-light btn-large cyan lighten-3"><i
-              class="material-icons right">arrow_drop_down</i>Carlos Eduardo Lopez Gutierrez</a>
+              class="material-icons right">arrow_drop_down</i><?php echo $respuesta1['nombreAlumno']." ".$respuesta1['apellido_p_Alumno']." ".$respuesta1['apellido_m_Alumno'] ?></a>
         </div>
         <div class="col l4 m6 s12  center" style="margin-top: 5vh;">
           <span id="counter" style="font-size: 150px;" ;>0</span>

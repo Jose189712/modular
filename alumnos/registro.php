@@ -15,8 +15,9 @@
     }else if(empty($registro->empty_Alumno($alumno)) == 'Error en la conexión'){
         echo 'Error en la conexión a la base de datos';
     }
-    else{
-        var_dump($registro->set_alumnos($alumno,$nombre,$apellidoP,$apellidoM,$password,$sexo));
+    else{        
+        $registro->set_alumnos($alumno,$nombre,$apellidoP,$apellidoM,$password,$sexo);
+        $registro->startSesion($nombre,$apellidoP,$apellidoM,$sexo,$alumno);        
         echo 'Exito';
     }
 ?>

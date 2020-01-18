@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="../materialize/css/materialize.min.css">
+  <link rel="stylesheet" href="../css/padres.css">
   <title>Inicio sesion padres</title>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
@@ -13,21 +14,79 @@
 <body>
   <nav class="sidenav-trigger cyan">
     <div class="nav-wrapper" style="padding-left: 20px;">
-      <a href="http://localhost:8080/modular" class="brand-logo">SEA</a>
+      <a href="http://localhost:8080/Proyecto" class="brand-logo">SEA</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
 
     </div>
   </nav>
 
 
+  <div id="containerAlumnosP" class="formAlumnos">
+    <div style="margin: 0 auto;width: 50%;margin-top: 10vh;" class="row card-panel formInside">
+      <form id="formAP" method="post" class="col s12">
+        <h4 class="center">Registra al Alumno</h4>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_prefix" type="text" name="nombreAp" class="validate" required>
+            <label for="icon_prefix">Nombre</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_apellidoP" type="text" name="apellidoPAp" class="validate" required>
+            <label for="icon_apellidoP">Apellido Paterno</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_apellidoM" type="text" name="apellidoMAp" class="validate" required>
+            <label for="icon_apellidoM">Apellido Materno</label>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">account_circle</i>
+            <input id="icon_username" type="text" class="validate" name="nombreUAp" required>
+            <label for="icon_username">Nombre de Usuario</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="row input-field col s6">
+            <p class="col s3">
+              <label>
+                <input name="sexo" type="radio" value="nino" checked />
+                <span>Niño</span>
+              </label>
+            </p>
+            <p class="col s3">
+              <label>
+                <input name="sexo" type="radio" value="nina" />
+                <span>Niña</span>
+              </label>
+            </p>
+          </div>
+          <div class="input-field col s6">
+            <i class="material-icons prefix">lock_outline</i>
+            <input id="icon_pass" type="password" name="passAp" class="validate" required>
+            <label for="icon_pass">Contraseña</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col s6 offset-s4">
+            <button class="btn waves-effect waves-light" type="submit" name="action">Registrar
+              <i class="material-icons right">send</i>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
 
   <div class="section container">
 
-    <div class="row">
-
-      <form class="col s6 offset-s3" method="post" id="initPadre"> 
-
-        <div class="row card-panel center" id="containersillo">
+    <div class="row center card-panel">
+      <div class="row card-panel col s6 offset-s3" id="containersillo">
+        <form class="row" method="post" id="initPadre">
           <div class="center" style="height:auto;">
             <h4 style="margin: 2vh; font-weight: bold; width: 100%;color:#212121;">Iniciar Sesion</h4>
           </div>
@@ -43,29 +102,28 @@
             <label for="icon_password">Contraseña</label>
           </div>
 
+
           <button class="waves-effect waves-light btn cyan col s6 offset-s3" id="iniciar-sesion" type="submit"><i
               class="material-icons right">send</i>Iniciar</button>
           <label class="col s8 offset-s2" style="margin-top: 10vh;"> Si no estas registrado <a id="registar"
               href="#registrar">Registrate Ahora</a> </label>
-        </div>
-      </form>
-      <div class="card-panel">
-        <div class="container center">
-          <button class="waves-effect waves-light btn cyan" style="margin-top: 5vh;"><a href="../"
-              style="color:white">Volver a página de inicio</a></button>
-        </div>
+        </form>
       </div>
 
-
     </div>
-
-
+    <div class="card-panel">
+      <div class="container center">
+        <button class="waves-effect waves-light btn cyan" style="margin-top: 5vh;"><a href="../"
+            style="color:white">Volver a página de inicio</a></button>
+      </div>
+    </div>
   </div>
 
   <script src="../materialize/js/jquery-3.3.1.min.js"></script>
   <script src="../materialize/js/materialize.min.js"></script>
   <script src="scripts/script.ajax.js"></script>
-  <script src="scripts/actionInicio.js"></script>
+
+
 </body>
 
 </html>

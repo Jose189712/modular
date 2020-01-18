@@ -54,7 +54,7 @@
             pregunta();
         });
         $("#btn-finalizar > .boton-finalizar").click(function(){
-            location.href = "../ejercicios/circuito.html";
+            location.href = "../tablero.php";
         });
         
         //FUNCIONES AL DAR CLICK EN UNA IMAGEN

@@ -10,7 +10,7 @@
             if($this->$db != NULL){                
                 $statement = $this->$db->prepare("SELECT * FROM alumnos WHERE (name_user='$name_user' AND palabra_secreta='$password')");
                 $statement->execute();                
-                $resultado = $statement->fetchAll();                
+                $resultado = $statement->fetch();                
                 if(empty($resultado)) return false;
                 else return $this->createSession($resultado);
             }else{

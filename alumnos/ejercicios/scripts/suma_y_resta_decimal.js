@@ -89,6 +89,7 @@ function revisar(){
         document.getElementById('div4').style.backgroundColor='#e07474';
     }
     alert('puntuacion:'+contador);
+    location.href = '../tablero.php';
 }
 
 

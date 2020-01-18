@@ -11,44 +11,40 @@
 </head>
 
 <body>
-  <div class="center" style="height:auto;">
-    <h4 style="margin: 2vh; font-weight: bold; width: 100%;">Registrarse</h4>
-  </div>
+    <div class="center" style="height:auto;">
+      <h3 style="margin: 2vh; font-weight: bold; width: 100%;">Registrarse</h3>
+    </div>
 
-  <div class="input-field col s12">
-    <i class="material-icons prefix">account_circle</i>
-    <input id="icon_name" type="text" class="validate" required>
-    <label for="icon_name">Nombre</label>
-  </div>
-  <div class="input-field col s12">
-    <i class="material-icons prefix">person</i>
-    <input id="icon_paterno" type="text" class="validate" required>
-    <label for="icon_paterno">Apellido Paterno</label>
-  </div>
-  <div class="input-field col s12">
-    <i class="material-icons prefix">person</i>
-    <input id="icon_materno" type="text" class="validate" required>
-    <label for="icon_materno">Apellido Materno</label>
-  </div>
-  <div class="input-field col s12">
-    <i class="material-icons prefix">email</i>
-    <input id="icon_email" type="password" class="validate" required>
-    <label for="icon_email">Correo</label>
-  </div>
-  <div class="input-field col s12">
-    <i class="material-icons prefix">lock</i>
-    <input id="icon_password" type="password" class="validate" required>
-    <label for="icon_password">Contraseña</label>
-  </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">account_circle</i>
+      <input id="icon_name" type="text" class="validate" name="nombre" required>
+      <label for="icon_name">Nombre</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">person</i>
+      <input id="icon_paterno" type="text" class="validate" name="apellidoP" required>
+      <label for="icon_paterno">Apellido Paterno</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">person</i>
+      <input id="icon_materno" type="text" class="validate" name="apellidoM" required>
+      <label for="icon_materno">Apellido Materno</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">email</i>
+      <input id="icon_email" type="email" class="validate" name="correo" required>
+      <label for="icon_email">Correo</label>
+    </div>
+    <div class="input-field col s12">
+      <i class="material-icons prefix">lock</i>
+      <input id="icon_password" type="password" class="validate" name="password" required>
+      <label for="icon_password">Contraseña</label>
+    </div>
+    <div class="input-field col s12">
+      <button class="waves-effect waves-light btn cyan col s6 offset-s3" type="submit"><i
+        class="material-icons right">assignment_late</i>Registrar</button>
+    </div>            
 
-
-  <button class="waves-effect waves-light btn cyan col s6 offset-s3" type="submit"><i
-      class="material-icons right">assignment_late</i>Registar</button>
-
-  <script src="../materialize/js/jquery-3.3.1.min.js"></script>
-  <script src="../materialize/js/materialize.min.js"></script>
-  <script src="scripts/script.ajax.js"></script>
-  
 </body>
 
 </html>

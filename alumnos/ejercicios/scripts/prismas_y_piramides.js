@@ -101,5 +101,6 @@ function revisar(){
     }
 
     alert('puntuacion:'+contador);
+    location.href = '../tablero.php';
 }
 
