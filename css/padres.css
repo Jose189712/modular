@@ -9,3 +9,7 @@
     left: 0;
     display: none;
 }
+.custom-close:hover{
+    color: blue;
+    cursor: pointer;
+}

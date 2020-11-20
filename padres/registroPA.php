@@ -11,5 +11,6 @@ require "../config/clasesR.php";
     $padre = new PadreR();
 
     echo $padre->registrarAlumnos($nombre,$apellidoP,$apellidoM,$username,$sexo,$passAp);
+    // Este método retornara una cadena
 
 ?>
