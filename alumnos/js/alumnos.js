@@ -75,7 +75,7 @@
                 success: function(response) {
                     if(response)
                         alert("Registro exitoso"+response);                        
-                        location.href = './test_vak';
+                        location.href = './test_vak';/** REEMPLAZAR ESTA LINEA POR EL INICIO DEL SISTEMA*/
                 }
             });
         });
