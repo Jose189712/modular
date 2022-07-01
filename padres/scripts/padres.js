@@ -19,8 +19,7 @@ $(document).ready(function () {
         .then(response => {
             return response.json();
         })
-        .then(respuesta => {
-            console.log(respuesta);
+        .then(respuesta => {            
             if (respuesta == 0) {
                 $("#containerAlumnosP").slideDown("1000");
             } else {

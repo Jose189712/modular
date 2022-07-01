@@ -70,17 +70,17 @@
                     <input id="icon_prefix" type="text" class="validate" name="name_user" required>
                     <label for="icon_prefix">Escribe tu nombre de usuario</label>
                 </div>
-                <div class="input-field col s12 arreglo">
+                <div class="input-field col s12 arreglo" >
                     <p>
-                        <label>Elige tu genero de los de abajo</label>
+                        <label style="color:black; font-size:1.2rem" >Elige tu genero de los de abajo</label>
                         <br>
                         <label>
                             <input class="with-gap" name="sexo" type="radio" value="nino" checked required/>
-                            <span>Niño</span>
+                            <span style="color:black; font-size:1.2rem">Niño</span>
                         </label>
                         <label>
                             <input class="with-gap" name="sexo" type="radio" value="nina" checked required/>
-                            <span>Niña</span>
+                            <span style="color:black; font-size:1.2rem">Niña</span>
                         </label>
                     </p>
                 </div>

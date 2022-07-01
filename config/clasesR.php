@@ -205,10 +205,12 @@ class PadreR extends Conexion
 
         if ($existeAlumno == 'true') {
             if ($alumno->set_alumnos($username, $nombre, $apellidoP, $apellidoM, $passAp, $sexo, $nivel)) {                
-                $idAlumno = $this->getIdAlumno($username)['idALUMNOS'];                                                
-                $statement = $this->db->prepare("INSERT INTO alumnos_has_padre(ALUMNOS_idALUMNOS,PADRE_idPADRE) VALUES($idAlumno,$id)");
+                $idAlumno = $this->getIdAlumno($username)['idALUMNOS']; 
+                //echo $id;                                               
+                $statement = $this->db->prepare("INSERT INTO alumnos_has_padre(ALUMNOS_idALUMNOS,USUARIOS_idUSUARIOS_E) VALUES($idAlumno,$id)");
+                //echo $this->db;
                 $statement->execute();
-                return 1;
+                return 1;                
             } else {
                 return 'No se ha podido registrar al alumno';
             } //fin del if else
@@ -228,7 +230,7 @@ class PadreR extends Conexion
     } //Fin del método para conseguir el id del alumno  
     
     public function getAlumnos($id) {
-        $statement = $this->db->prepare("SELECT idALUMNOS,nombreAlumno,apellido_p_Alumno,apellido_m_Alumno FROM alumnos,alumnos_has_padre as ap,usuarios_e as u WHERE u.idUSUARIOS_E=$id AND u.idUSUARIOS_E=ap.PADRE_idPADRE AND alumnos.idALUMNOS=ap.ALUMNOS_idALUMNOS");
+        $statement = $this->db->prepare("SELECT idALUMNOS,nombreAlumno,apellido_p_Alumno,apellido_m_Alumno FROM alumnos,alumnos_has_padre as ap,usuarios_e as u WHERE u.idUSUARIOS_E=$id AND u.idUSUARIOS_E=ap.USUARIOS_idUSUARIOS_E AND alumnos.idALUMNOS=ap.ALUMNOS_idALUMNOS");
         $statement->execute();
         return $statement->fetchAll();
     }
