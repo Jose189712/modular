@@ -1,4 +1,5 @@
 <?php
+session_start();
 require "../config/clasesR.php";
 
     $nombre = $_POST['nombreAp'];
@@ -10,7 +11,7 @@ require "../config/clasesR.php";
 
     $padre = new PadreR();
 
-    echo $padre->registrarAlumnos($nombre,$apellidoP,$apellidoM,$username,$sexo,$passAp);
+    echo $padre->registrarAlumnos($nombre,$apellidoP,$apellidoM,$username,$sexo,$passAp,1,$_SESSION['idusuario']);
     // Este método retornara una cadena
 
 ?>

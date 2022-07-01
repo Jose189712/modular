@@ -9,15 +9,14 @@
     $sexo = $_POST['sexo'];
 
     $registro = new AlumnoR();    
-
+    $getid = new General();
+    
     if($registro->empty_Alumno($alumno) == 'false'){
-        echo 'Fallo registro nombre de usuario existe';
-    }else if(empty($registro->empty_Alumno($alumno)) == 'Error en la conexión'){
-        echo 'Error en la conexión a la base de datos';
-    }
-    else{        
-        $registro->set_alumnos($alumno,$nombre,$apellidoP,$apellidoM,$password,$sexo);
-        $registro->startSesion($nombre,$apellidoP,$apellidoM,$sexo,$alumno);        
+        echo 0;
+    } else{        
+        $registro->set_alumnos($alumno,$nombre,$apellidoP,$apellidoM,$password,$sexo,1);
+        $id = $getid->getValue("alumnos",$_POST['name_user'],"idALUMNOS","name_user");
+        $registro->startSesion($nombre,$apellidoP,$apellidoM,$sexo,$alumno,$id[0]['idALUMNOS']);        
         echo 'Exito';
     }
 ?>

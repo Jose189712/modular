@@ -7,8 +7,8 @@
         }//fin del constructor de la calse UsuarioR
 
         public function existeAlumno($name_user,$password){
-            if($this->$db != NULL){                
-                $statement = $this->$db->prepare("SELECT * FROM alumnos WHERE (name_user='$name_user' AND palabra_secreta='$password')");
+            if($this->db != NULL){                
+                $statement = $this->db->prepare("SELECT * FROM alumnos WHERE (name_user='$name_user' AND palabra_secreta='$password')");
                 $statement->execute();                
                 $resultado = $statement->fetch();                
                 if(empty($resultado)) return false;
@@ -20,11 +20,13 @@
         
         protected function createSession($resultado){
             session_start();
+            $_SESSION['idAlumnos'] = $resultado['idALUMNOS'];
             $_SESSION['nombreAlumno'] = $resultado['nombreAlumno'];            
             $_SESSION['apellidoPA'] = $resultado['apellido_p_Alumno'];
             $_SESSION['apellidoMA'] = $resultado['apellido_m_Alumno'];
             $_SESSION['nickName'] = $resultado['name_user'];
             $_SESSION['genero'] = $resultado['sexo'];
+            $_SESSION['nivel'] = $resultado['nivel'];
             return true;
         }//fin del método para crear la session
     }//Clase de sesionAlumnos para iniciar la sesion de los alumnos
@@ -35,8 +37,8 @@
         }
 
         public function existeUsuario($correo,$password){
-            if($this->$db != NULL){                
-                $statement = $this->$db->prepare("SELECT * FROM usuarios_e WHERE (correo='$correo' AND password='$password')");
+            if($this->db != NULL){                
+                $statement = $this->db->prepare("SELECT * FROM usuarios_e WHERE (correo='$correo' AND password='$password')");
                 $statement->execute();
                 $resultado = $statement->fetch();                  
                 if(empty($resultado)) return false;

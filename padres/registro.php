@@ -9,14 +9,11 @@ require "../config/clasesR.php";
     
     $registro = new PadreR();
 
-    if($registro->empty_Padre($correo) == 'true'){        
-        if($registro->set_padre($nombre,$apellidoP,$apellidoM,$correo,$password)){
-            $registro->startSesion($nombre,$apellidoP,$apellidoM,$correo);
-            echo 1;
-        } 
-        else echo 2;
-    }else{
-        echo 0;
+    //echo $registro->empty_Padre($correo);
+    if($registro->empty_Padre($correo)){        
+        echo $registro->set_padre($nombre,$apellidoP,$apellidoM,$correo,$password);                    
+    } else {
+        echo 'Ya existe';
     }
 
     

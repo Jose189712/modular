@@ -86,12 +86,11 @@ $(function () {
                 .then(respuesta => {
                     console.log(respuesta);                    
                     if(respuesta == 1){        
-                        alert("Se ha registrado correctamente");                
-                        containAlumnos.style.display = "block";                        
-                    }else if(respuesta == 2){
-                        alert("No se ha podido registrar");
-                    }else{
-                        alert("ERROR Ha un problema con el servidor");
+                        console.log("Se ha registrado correctamente");                
+                        location.href = './Main.php';               
+                    } else if (respuesta == 'Ya existe'){
+                        alert("El usuario ya existe");
+                        formularioRegistro.reset();
                     } 
                 })
         })

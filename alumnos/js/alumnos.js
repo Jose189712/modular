@@ -73,9 +73,11 @@
                 type: 'POST',
                 data: $("#registerForm").serialize(),
                 success: function(response) {
-                    if(response)
-                        alert("Registro exitoso"+response);                        
-                        location.href = './test_vak';/** REEMPLAZAR ESTA LINEA POR EL INICIO DEL SISTEMA*/
+                    if(response == 0) {
+                        alert("No se pudo hacer el registro el usuario !YA EXISTE¡");                                                                        
+                    } else {
+                        location.href = './mapa.php';
+                    }                   
                 }
             });
         });
@@ -121,11 +123,11 @@ iniciarYa.addEventListener('click', function(){
     })
     .then(response => {
         return response.text();
-    })    
-    .then(respuesta => {
-        console.log(respuesta);
-        if(respuesta == 'true')                        
-        location.href = './tablero.php';
+    })          
+    .then(respuesta => {        
+        if(respuesta == 'true') {
+            location.href = './mapa.php';
+        }                             
     })
 })
 // FIN DE ACCIONES PARA PRESENTAR LOS DATOS CONSECUTIVOS

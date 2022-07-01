@@ -1,6 +1,6 @@
 <?php
 define("servidor","localhost");
-define("baseD","seducativo");
-define("usuario","jose");
-define("password","jose1234");
+define("baseD","s_educativo");
+define("usuario","root");
+define("password","");
 ?>

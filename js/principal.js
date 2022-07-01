@@ -7,7 +7,7 @@
         $(this).css('background','#00CC3A');
         $("#descripcion").html("¡Alumnos! Vamos comencemos la aventura con las Matemáticas");
         $(".borrado").remove();
-        $(".contenedor").append("<div id=\"alumnosA\" class=\"borrado\"><p>Vamos</p></div>");
+        $(".contenedor").append("<div id=\"alumnosA\" class=\"borrado\"><p>VAMOS</p></div>");
         asignar_redireccion("./alumnos/index.php","#alumnosA");
     });     
     $("#padres").click(function(){

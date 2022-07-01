@@ -7,6 +7,7 @@
     $login = new SesionAlumnos();
     
     if($login->existeAlumno($nickName,$password)){
+        // Aqui debe haber una llamada al metodo createSession
         echo 'true';
     }else{
         echo 'false';
