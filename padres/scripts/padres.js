@@ -181,7 +181,7 @@ $(document).ready(function () {
                 Puntaje(0);
                 preloadPuntaje.setAttribute("style", "width:0%");
             } else {
-                Puntaje((parseInt(respuesta['puntaje'])*100)/(parseInt(respuesta['ejercicios'])*100));
+                Puntaje(Math.round((parseInt(respuesta['puntaje'])*100)/(parseInt(respuesta['ejercicios'])*100)));
                 preloadPuntaje.setAttribute("style", "width:"+(parseInt(respuesta['puntaje'])*100)/(parseInt(respuesta['ejercicios'])*100)+"%");
             }
             
