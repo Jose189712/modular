@@ -124,7 +124,7 @@ document.getElementById("finish").addEventListener('click', (ev) => {
       })
       .then(respuesta => {
         console.log(respuesta);
-        sesion = respuesta.split(")")[1];
+        sesion = respuesta;
       })
   
   // Fin del bloque de código para guardar los datos en la base de datos
@@ -134,27 +134,3 @@ document.getElementById("nextExercise").addEventListener('click', () => {
   location.href = 'series_numericas.php?id=' + sesion;
 })
 
-var campos = document.querySelectorAll(".response");
-
-document.getElementById("inputF1").addEventListener('change', checkFieldsInput);
-document.getElementById("inputF2").addEventListener('change', checkFieldsInput);
-document.getElementById("inputF3").addEventListener('change', checkFieldsInput);
-
-/**Funcion para checar que no haya campos vacios */
-function checkFieldsInput(ev) {
-  console.log("escribiendo...")
-  let bool = false;
-  for (i = 0; i < campos.length; i++) {
-    if (campos[i].value == '') {
-      bool = false;
-      continue;
-    } else {
-      bool = true;
-    }
-  }
-  if (bool) {
-    document.getElementById("finish").removeAttribute("disabled")
-  } else {
-    document.getElementById("finish").setAttribute("disabled", "");
-  }
-}//fin de la funcion 

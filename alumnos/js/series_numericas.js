@@ -34,8 +34,7 @@ fetch('getLevel.php', {
       aleatorio = ~~(Math.random()*(imagenes.length));
     }   
 
-    let series = document.querySelectorAll(".serie");
-    console.log(storageLevel[0])
+    let series = document.querySelectorAll(".serie");    
     for (i = 0; i < storageLevel[0].length; i++) {
       series[i].innerHTML = storageLevel[0][i];
     }
@@ -58,8 +57,7 @@ document.getElementById("finish").addEventListener('click', (ev) => {
     objeto.push(respuestas[i].value);
   }  
   answer.push(storageLevel[0]);
-  answer.push(objeto);  
-  console.log(JSON.stringify(answer));
+  answer.push(objeto);    
 
   document.getElementById("puntuacion").innerHTML = String(puntos) + '/3';
 
@@ -76,7 +74,7 @@ document.getElementById("finish").addEventListener('click', (ev) => {
     })
     .then(respuesta => {
       console.log(respuesta);
-      sesion = respuesta.split(")")[1];
+      sesion = respuesta;
     })
 
   // Fin del bloque de código para guardar los datos en la base de datos
@@ -105,8 +103,7 @@ document.getElementById("inputF2").addEventListener('change', checkFieldsInput);
 document.getElementById("inputF3").addEventListener('change', checkFieldsInput);
 
 /**Funcion para checar que no haya campos vacios */
-function checkFieldsInput(ev) {
-  console.log("escribiendo...")
+function checkFieldsInput(ev) {  
   let bool = false;
   for (i = 0; i < campos.length; i++) {
     if (campos[i].value == '') {

@@ -80,9 +80,9 @@ class AlumnoR extends Conexion
         $statement = $this->db->prepare("INSERT INTO sesiones(fechaInicio,estatus,ALUMNOS_idALUMNOS) VALUES(NOW(),0,$id)");
         $h = $statement->execute();
         if ($h) {
-            $statement = $this->db->prepare("SELECT @@identity AS id");
+            $statement = $this->db->prepare("SELECT MAX(idSESIONES) FROM sesiones WHERE ALUMNOS_idALUMNOS=$id");
             $statement->execute();
-            $response = $statement->fetchAll();
+            $response = $statement->fetch();
         }
         return $response;
     } //Fin del metodo para registrar las sesiones
@@ -98,7 +98,7 @@ class AlumnoR extends Conexion
         $statement->bindParam(':nivel', $nivel);
         $h = $statement->execute();
         if ($h) {
-            $statement = $this->db->prepare("SELECT @@identity AS id");
+            $statement = $this->db->prepare("SELECT MAX(idEjercicios) FROM ejercicios");
             $statement->execute();
             $response = $statement->fetch();
         }
@@ -106,7 +106,7 @@ class AlumnoR extends Conexion
     } //Fin del método para guardar los ejercicios
     /**Método para guardar la relacion entre las sesiones y los ejercicios */
     public function relationSE($idEjercicios, $idSesiones)
-    {
+    {        
         $statement = $this->db->prepare("INSERT INTO sesiones_has_ejercicios(SESIONES_idSESIONES,Ejercicios_idEjercicios) VALUES(:idSesiones,:idEjercicios)");
         $statement->bindParam('idEjercicios', $idEjercicios);
         $statement->bindParam('idSesiones', $idSesiones);
@@ -131,6 +131,7 @@ class AlumnoR extends Conexion
     /**Método para actualizar el estado de la sesion */
     public function updateSesion($idSesion)
     {
+        var_dump($idSesion);
         $statement = $this->db->prepare("UPDATE sesiones SET estatus=1,fechafin=NOW() WHERE idSESIONES=$idSesion");
         $h = $statement->execute();
         if ($h) {

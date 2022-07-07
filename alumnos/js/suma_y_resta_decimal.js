@@ -118,7 +118,8 @@ document.getElementById("finish").addEventListener('click', (ev) => {
       })
       .then(respuesta => {
         console.log(respuesta);
-        sesion = respuesta.split(")")[1];        
+        sesion = respuesta;  
+        console.log(sesion);      
       })
 
     // Fin del bloque de código para guardar los datos en la base de datos

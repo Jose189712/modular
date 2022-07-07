@@ -44,7 +44,7 @@ window.onload = function () {
                     return response.json();
                 })
                 .then(respuesta => {
-                    console.log(respuesta['ejercicios']);
+                    console.log(respuesta);
                     if(parseInt(respuesta['ejercicios']) == 1) {                        
                         location.href = 'figuras_geometricas.php?id='+respuesta['sesion'];
                     } else if(parseInt(respuesta['ejercicios']) == 2) {                        
