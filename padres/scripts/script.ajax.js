@@ -28,12 +28,14 @@ $(function () {
     // Ajax Registrarse
     function descargarArchivo() {
         container.innerHTML = "<form class=\"row col s12\" style=\"height:auto\" id=\"formRegister\" method=\"post\"></form>";
-        container = document.querySelector("#formRegister");        
+        container = document.querySelector("#formRegister");
         inicializar_XHR();
-        Peticion("formRegistro.html", "GET", funcActuadora);        
-        accionesRegistro();        
+        Peticion("formRegistro.html", "GET", funcActuadora);
+        accionesRegistro();
     }
 
+    var mensajesA = document.getElementById("modalMessages");
+    var instanceA = M.Modal.init(mensajesA, {});
 
     //CÓDIGO PARA QUE LOS PADRES INICIEN SESION 
     var form = document.querySelector("#initPadre");
@@ -52,17 +54,19 @@ $(function () {
             .then(respuesta => {
                 console.log("Hola jose " + respuesta);
                 if (respuesta == 'true') {
-                    alert("Si eres padre");
                     location.href = './Main.php';
                 }
                 else {
-                    alert("No eres Padre");
+                    document.getElementById("tituloMA").innerHTML = "¡ERROR!";
+                    document.getElementById("tituloMA").style.color = "red";
+                    document.getElementById("textoModal").innerHTML = "El usuario y/o contraseña son incorrectos";
+                    instanceA.open();
                 }
             })
     })
 
     var btnAJAX = document.getElementById("registar"),
-        container = document.getElementById("containersillo"), containAlumnos = document.querySelector("#containerAlumnosP"), 
+        container = document.getElementById("containersillo"), containAlumnos = document.querySelector("#containerAlumnosP"),
         formAlumnosR = document.querySelector("#formAP");
     btnAJAX.addEventListener("click", descargarArchivo);
 
@@ -70,7 +74,7 @@ $(function () {
     //FUNCIÓN PAR QUE LOS PADRES SE REGISTREN COMNO USUARIOS DEL SISTEMA
     function accionesRegistro() {
         var formularioRegistro = document.querySelector("#formRegister");
-        
+
         formularioRegistro.addEventListener("submit", (event) => {
             event.preventDefault();
 
@@ -84,14 +88,16 @@ $(function () {
                     return response.text();
                 })
                 .then(respuesta => {
-                    console.log(respuesta);                    
-                    if(respuesta == 1){        
-                        console.log("Se ha registrado correctamente");                
-                        location.href = './Main.php';               
-                    } else if (respuesta == 'Ya existe'){
-                        alert("El usuario ya existe");
+                    console.log(respuesta);
+                    if (respuesta == 1) {
+                        location.href = './Main.php';
+                    } else if (respuesta == 'Ya existe') {
+                        document.getElementById("tituloMA").innerHTML = "ATENCIÓN";
+                        document.getElementById("tituloMA").style.color = "green";
+                        document.getElementById("textoModal").innerHTML = "Ese correo ya esta registrado ingresa otro o inicia sesión";
+                        instanceA.open();
                         formularioRegistro.reset();
-                    } 
+                    }
                 })
         })
     }//fin de la funcion para cargar las acciones del registro
@@ -107,18 +113,18 @@ $(function () {
             method: 'POST',
             body: formSeriado
         })
-        .then(response => {
-            return response.text();
-        })
-        .then(respuesta => {
-            console.log(respuesta);
-            if(respuesta == 1){
-                alert("El registro ha sido exitoso");
-                location.href = './Main.php';
-            }else{
-                alert(respuesta);
-            }
-        })
+            .then(response => {
+                return response.text();
+            })
+            .then(respuesta => {
+                console.log(respuesta);
+                if (respuesta == 1) {
+                    alert("El registro ha sido exitoso");
+                    location.href = './Main.php';
+                } else {
+                    alert(respuesta);
+                }
+            })
     })
 
 

@@ -15,7 +15,7 @@ if (empty($_SESSION['nickName'])) {
     <title>Suma y Resta con Decimales</title>
 </head>
 
-<body style="background-color:teal">
+<body style="background-image: url(../imagenes/fondo1.jpg);background-color: teal;background-repeat: no-repeat;background-size: cover;background-attachment: fixed; background-position: center;">
     <!-- Instrucciones -->
     <?php require "user_information.php" ?>
     <div class="container mb-4">
@@ -42,13 +42,43 @@ if (empty($_SESSION['nickName'])) {
     <div class="container">
         <div class="row">
             <div class="col-10">
-                <div class="row">
-                    <div class="col-2 border-bottom border-danger border-5">
-                        <h3 class="text-center text-white p-1">RESULTADOS</h3>
+                <div class="row rounded-3 bg-warning">
+                    <div class="col-2 border-bottom border-danger border-5 ">
+                        <h3 class="text-center text-white p-1 ">RESULTADOS</h3>
                     </div>
                     <div class="col-2"></div>
                     <div class="col-6 border-bottom border-danger border-5">
-                        <h3 class="text-center text-white m-2">Suelta los números en los recuadros</h3>
+                        <h3 class="text-center text-white m-2 rounded-3 bg-warning">Suelta los números en los recuadros</h3>
+                    </div>
+                </div>
+                <div class="row earn">
+                    <div class="col-2 border p-4 rounded-3" style="background-color: #ffda6a">
+                        <h3 class="text-center text-muted result"></h3>
+                    </div>
+                    <div class="col-2">
+                        <h3 class="text-center p-4 fs-2 text-white">=</h3>
+                    </div>
+                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
+                    </div>
+                    <div class="col-2">
+                        <h3 class="text-center p-4 fs-2 text-white">+</h3>
+                    </div>
+                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
+                    </div>
+                </div>
+                <div class="row earn">
+                    <div class="col-2 border p-4 rounded-3" style="background-color: #ffda6a">
+                        <h3 class="text-center text-muted result"></h3>
+                    </div>
+                    <div class="col-2">
+                        <h3 class="text-center p-4 fs-2 text-white">=</h3>
+                    </div>
+                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
+                    </div>
+                    <div class="col-2">
+                        <h3 class="text-center p-4 fs-2 text-white">+</h3>
+                    </div>
+                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
                     </div>
                 </div>
                 <div class="row earn">
@@ -71,50 +101,20 @@ if (empty($_SESSION['nickName'])) {
                         <h3 class="text-center text-muted result"></h3>
                     </div>
                     <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">=</h3>
+                        <h3 class="text-center p-4 fs-2 text-white">=</h3>
                     </div>
                     <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
                     </div>
                     <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">+</h3>
+                        <h3 class="text-center p-4 fs-2 text-white">+</h3>
                     </div>
                     <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
-                    </div>
-                </div>
-                <div class="row earn">
-                    <div class="col-2 border p-4 rounded-3" style="background-color: #ffda6a">
-                        <h3 class="text-center text-muted result"></h3>
-                    </div>
-                    <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">=</h3>
-                    </div>
-                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
-                    </div>
-                    <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">+</h3>
-                    </div>
-                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
-                    </div>
-                </div>
-                <div class="row earn">
-                    <div class="col-2 border p-4 rounded-3" style="background-color: #ffda6a">
-                        <h3 class="text-center text-muted result"></h3>
-                    </div>
-                    <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">=</h3>
-                    </div>
-                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
-                    </div>
-                    <div class="col-2">
-                        <h3 class="text-center p-4 fs-2">+</h3>
-                    </div>
-                    <div class="col-2 border p-4 rounded-3 bg-light drop" ondrop="drop(event)" ondragover="allowDrop(event)" ondragenter="enter(event)" ondragleave="leave(event)">
-                    </div>
+                    </div>                    
                 </div>
             </div>
             <div id="numbers" class="col-2">
                 <div class="row">
-                    <div class="col-12 border-bottom border-primary border-5">
+                    <div class="col-12 border-bottom border-primary border-5 rounded-3 bg-warning">
                         <h3 class="text-center text-white m-2">Arrastra los números</h3>
                     </div>
                 </div>
@@ -159,8 +159,9 @@ if (empty($_SESSION['nickName'])) {
                             <h3 class="text-center text-white option"></h3>
                         </div>
                     </div>
-                </div>
-            </div>
+                </div>     
+                <div class="row"><div class="col-2 m-4"><img id="animalito" alt="animalito" style="width:100px;height:100px"></div></div>                          
+            </div>            
             <div class="row">
                 <div class="col-10"></div>
                 <div class="col-2">

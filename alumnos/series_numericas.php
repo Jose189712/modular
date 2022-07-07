@@ -15,7 +15,7 @@ if (empty($_SESSION['nickName'])) {
     <title>Series Númericas</title>
 </head>
 
-<body class="bg-light bg-gradient">
+<body style="background-image: url(../imagenes/fondo2.jpg);background-color: teal;background-repeat: no-repeat;background-size: cover;background-attachment: fixed; background-position: center;">
     <!-- Instrucciones -->
     <?php require "user_information.php" ?>
     <div class="container mb-4">
@@ -84,9 +84,23 @@ if (empty($_SESSION['nickName'])) {
             </div>
             <div style="height:100px"></div>
             <div class="row">
-                <div class="col-10"></div>
                 <div class="col-2">
-                    <button id="finish" type="button" class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#modalPuntaje" disabled>
+                    <img id="animalito0" alt="animalito" style="width:110px;height:110px">
+                </div>
+                <div class="col-2">
+                    <img id="animalito1" alt="animalito" style="width:110px;height:110px">
+                </div>
+                <div class="col-2">
+                    <img id="animalito2" alt="animalito" style="width:110px;height:110px">
+                </div>
+                <div class="col-2">
+                    <img id="animalito3" alt="animalito" style="width:110px;height:110px">
+                </div>
+                <div class="col-2">
+                    <img id="animalito4" alt="animalito" style="width:110px;height:110px">
+                </div>
+                <div class="col-2">
+                    <button id="finish" type="button" class="btn btn-danger text-center" data-bs-toggle="modal" data-bs-target="#modalPuntaje" disabled>
                         <spam>Checar ejercicios</spam>
                     </button>
                 </div>

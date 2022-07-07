@@ -14,7 +14,7 @@ if (empty($_SESSION['nickName'])) {
     <title>Figuras Geométricas</title>
 </head>
 
-<body class="bg-light bg-gradient">
+<body style="background-image: url(../imagenes/fondo3.jpg);background-color: teal;background-repeat: no-repeat;background-size: cover;background-attachment: fixed; background-position: center;">
     <!-- Instrucciones -->
     <?php require "user_information.php" ?>
     <div class="container mb-4">
@@ -41,31 +41,73 @@ if (empty($_SESSION['nickName'])) {
     <div class="container">
         <div class="row">
             <div class="row">
-                <div class="col-4 border text-center fieldF" style="height: 300px">
+                <div class="col-4 border border-5 border-dark text-center fieldF" style="height: 300px">
 
                 </div>
-                <div class="col-4 border text-center fieldF" style="height: 300px">
+                <div class="col-4 border border-5 border-dark text-center fieldF" style="height: 300px">
 
                 </div>
-                <div class="col-4 border text-center fieldF" style="height: 300px">
+                <div class="col-4 border border-5 border-dark text-center fieldF" style="height: 300px">
 
                 </div>
             </div>
             <div class="row">
                 <div id="figure1" class="col-4">
                     <br>
-                    <label for="inputF1" class="form-label text-muted"><strong>Escribe el nombre aquí</strong></label>
-                    <input id="inputF1" type="email" class="form-control response">
+                    <label for="inputF1" class="form-label text-white bg-success rounded-3 p-1"><strong>Seleccione la opcion correcta</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="primerFigura" id="flexRadioDefault1">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="flexRadioDefault1">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="primerFigura" id="flexRadioDefault2">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="flexRadioDefault2">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="primerFigura" id="flexRadioDefault3">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="flexRadioDefault3">
+                        </label>
+                    </div>
                 </div>
                 <div id="figure2" class="col-4">
                     <br>
-                    <label for="inputF2" class="form-label text-muted"><strong>Escribe el nombre aquí</strong></label>
-                    <input id="inputF2" type="email" class="form-control response">
+                    <label for="inputF2" class="form-label text-white bg-success rounded-3 p-1"><strong>Seleccione la opcion correcta</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="segundaFigura" id="mitadFigura1">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="mitadFigura1">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="segundaFigura" id="mitadFigura2">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="mitadFigura2">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="segundaFigura" id="mitadFigura3">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="mitadFigura3">
+                        </label>
+                    </div>
                 </div>
                 <div id="figure3" class="col-4">
                     <br>
-                    <label for="inputF3" class="form-label text-muted"><strong>Escribe el nombre aquí</strong></label>
-                    <input id="inputF3" type="email" class="form-control response">
+                    <label for="inputF3" class="form-label text-white bg-success rounded-3 p-1"><strong>Seleccione la opcion correcta</strong></label>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tercerFigura" id="ultimaFigura1">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="ultimaFigura1">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tercerFigura" id="ultimaFigura2">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="ultimaFigura2">
+                        </label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" type="radio" name="tercerFigura" id="ultimaFigura3">
+                        <label class="form-check-label opciones text-dark bg-info p-1 rounded-3" for="ultimaFigura3">
+                        </label>
+                    </div>
                 </div>
             </div>
             <div class="row">
@@ -76,7 +118,7 @@ if (empty($_SESSION['nickName'])) {
             <div class="row">
                 <div class="col-10"></div>
                 <div class="col-2">
-                    <button id="finish" type="button" class="btn btn-success text-center" data-bs-toggle="modal" data-bs-target="#modalPuntaje" disabled>
+                    <button id="finish" type="button" class="btn btn-danger text-center" data-bs-toggle="modal" data-bs-target="#modalPuntaje">
                         <spam>Checar ejercicios</spam>
                     </button>
                 </div>

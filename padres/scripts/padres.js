@@ -230,15 +230,18 @@ $(document).ready(function () {
             })
             .then(respuesta => {
                 console.log("Hola jose " + respuesta);
-                if (respuesta == 1) {
-                    //document.querySelector('#textoModal').innerHTML = "El alumno se ha registrado exitosamente";
-                    enviarInformacionAlumnos.reset();
-                    //instance.open();
-                   // $("#containerAlumnosP").slideUp("1000");
+                if (respuesta == 1) {                    
+                    enviarInformacionAlumnos.reset();                                       
                    location.reload();
                 }
-                else {
-                    document.querySelector('#textoModal').innerHTML = "El alumno no ha sido registrado";
+                else if (respuesta == 2){
+                    document.querySelector('#textoModal').innerHTML = "El usuario que ingreso ya existe";
+                    instance.open();
+                } else if (respuesta ==3) {
+                    document.querySelector('#textoModal').innerHTML = "Ha ocurrido un error y el alumno no ha sido registrado";
+                    instance.open();
+                } else {
+                    document.querySelector('#textoModal').innerHTML = "Ha ocurrido un error con el servidor intente de nuevo";
                     instance.open();
                 }
             })

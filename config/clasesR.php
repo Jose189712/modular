@@ -10,11 +10,11 @@ class General extends Conexion
 
     /**Metodo para obtener un campo especificado */
     public function getValue($table, $usuario, $field, $searchField)
-    {
+    {        
         if ($this->db != NULL) {
             $statement = $this->db->prepare("SELECT $field FROM $table WHERE $searchField='$usuario'");            
             $statement->execute();
-            $response = $statement->fetchAll();
+            $response = $statement->fetchAll();            
             if (empty($response)) {
                 return 'NOTFOUND';
             } else {
@@ -212,10 +212,10 @@ class PadreR extends Conexion
                 $statement->execute();
                 return 1;                
             } else {
-                return 'No se ha podido registrar al alumno';
+                return 3;
             } //fin del if else
         } else if ($existeAlumno == 'false') {
-            return 'Los datos ingresados ya existen';
+            return 2;
         } else {
             return 'Error de conexión con el servidor';
         }

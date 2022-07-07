@@ -6,6 +6,15 @@ window.onload = function () {
             return response.json();
         })
         .then(level => {
+            var myModal = new bootstrap.Modal(document.getElementById("informationUser"), {});            
+            if (level == 7) {
+                document.getElementById("textFinal").innerHTML = "";
+                document.getElementById("buttonComencemos").innerHTML = "TERMINASTE";
+                document.getElementById("aquiLevel").innerHTML = "<strong>¡FELICIDADES HAS COMPLETADO LOS NIVELES!</strong>";
+            } else {
+                document.getElementById("aquiLevel").innerHTML += " <strong>"+level+"</strong>. Realiza las actividades dando click en <strong>Comenzar</strong> para pasar a los siguientes niveles";
+            }            
+            myModal.show();            
             levelsComplete(level);
         })
 

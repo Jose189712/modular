@@ -13,6 +13,7 @@ var good = [];
 var answer = [];
 var URLactual = window.location.href;
 var sesion = URLactual.split('?')[1].split('=')[1];
+imagenes = ['lion.png', 'person.png', 'unknow.png', 'pato.png', 'oso.png', 'cabra.png', 'oso2.png', 'koala.png', 'pelicano.png', 'zorro.png', 'cocodrilo.png', 'serpiente.png', 'gato.png', 'raton.png', 'jaguar.png', 'caballo.png', 'panda.png', 'perrito.png', 'pajarillo.png', 'tucan.png', 'tortuga.png', 'cerdo.png', 'castor.png'];
 
 
 fetch('getLevel.php', {
@@ -24,6 +25,14 @@ fetch('getLevel.php', {
   .then(level => {
     levelClass = level;
     storageLevel = levels[levelClass];
+
+    let aleatorio = ~~(Math.random()*(imagenes.length));
+    
+    for (i = 0; i < 5; i++) {
+      document.getElementById("animalito"+i).setAttribute("src", "../imagenes/"+imagenes[aleatorio]);
+      imagenes = imagenes.filter((item) => item !== imagenes[aleatorio]);
+      aleatorio = ~~(Math.random()*(imagenes.length));
+    }   
 
     let series = document.querySelectorAll(".serie");
     console.log(storageLevel[0])

@@ -5,6 +5,7 @@ var good = [];
 var answer = [];
 var sesion = '';
 
+imagenes = ['lion.png', 'person.png', 'unknow.png', 'pato.png', 'oso.png', 'cabra.png', 'oso2.png', 'koala.png', 'pelicano.png', 'zorro.png', 'cocodrilo.png', 'serpiente.png', 'gato.png', 'raton.png', 'jaguar.png', 'caballo.png', 'panda.png', 'perrito.png', 'pajarillo.png', 'tucan.png', 'tortuga.png', 'cerdo.png', 'castor.png'];
 
 fetch('getLevel.php', {
   method: 'POST',
@@ -24,7 +25,12 @@ fetch('getLevel.php', {
       answers[i].innerHTML = good[i]['result'];
     }
     var numbers = [];
-    var name = 'uno';
+    var name = 'uno';    
+    let aleatorio = ~~(Math.random()*(imagenes.length));
+    
+    document.getElementById("animalito").setAttribute("src", "../imagenes/"+imagenes[aleatorio]);
+    imagenes = imagenes.filter((item) => item !== imagenes[aleatorio]);
+    
     for (i = 0; i < good.length; i++) {
       numbers.push(good[i][name]);
       if (i == good.length - 1 && name != 'dos') {
